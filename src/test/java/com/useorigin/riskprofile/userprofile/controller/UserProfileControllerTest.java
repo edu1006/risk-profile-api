@@ -1,6 +1,8 @@
 package com.useorigin.riskprofile.userprofile.controller;
 
+import com.useorigin.riskprofile.riskengine.enums.InsurancePlanEnum;
 import com.useorigin.riskprofile.userprofile.request.UserProfileRequest;
+import com.useorigin.riskprofile.userprofile.request.Vehicle;
 import com.useorigin.riskprofile.userprofile.response.ErrorHandleMessageResponse;
 import com.useorigin.riskprofile.userprofile.response.RiskProfileResponse;
 import org.junit.Test;
@@ -33,6 +35,8 @@ public class UserProfileControllerTest {
     public void shouldPostUser() throws Exception {
         UserProfileRequest request = new UserProfileRequest();
         request.setAge(18);
+        request.setVehicle(new Vehicle());
+        request.getVehicle().setYear(2020);
         request.setIncome(15000.00);
         request.setMaritalStatus("single");
         request.setDependents(0);
@@ -43,7 +47,7 @@ public class UserProfileControllerTest {
 
         RiskProfileResponse response = restTemplate.postForObject(PATH_RISK, request, RiskProfileResponse.class);
 
-        System.out.println(response);
+        assertThat(response.getAuto()).isEqualTo(InsurancePlanEnum.ECONOMIC.toString());
     }
 
 
@@ -121,8 +125,7 @@ public class UserProfileControllerTest {
 
         ErrorHandleMessageResponse response = restTemplate.postForObject(PATH_RISK, request, ErrorHandleMessageResponse.class);
         assertThat(response.getCode()).isEqualTo(HttpStatus.BAD_REQUEST.value());
-        assertThat(response.getMessage()).isEqualTo("No enum constant com.useorigin.riskprofile.userprofile.enums.MaritalStatusEnum.invalid");
-
+        assertThat(response.getMessage()).isEqualTo("No enum constant com.useorigin.riskprofile.userprofile.enums.MaritalStatusEnum.INVALID");
 
     }
 

@@ -1,15 +1,12 @@
-version: '2'
+version: '3'
+
+
+
 services:
-    message-server:
-        container_name: risk-profile-server
-        build:
-            context: docker-risk-profile-server
-            dockerfile: Dockerfile
-        image: message-server:latest
-        ports:
-            - 18888:8888
-        networks:
-            - spring-cloud-network
-networks:
-    spring-cloud-network:
-        driver: bridge
+    springboot-docker-compose-app-container:
+      image: springboot-docker-compose-app:1
+      build:
+        context: ./
+        dockerfile: Dockerfile
+      ports:
+        - "8080:8080"

@@ -1,3 +1,4 @@
-FROM amazoncorretto:11-alpine-jdk
-COPY target/docker-message-server-1.0.0.jar message-server-1.0.0.jar
-ENTRYPOINT ["java","-jar","/message-server-1.0.0.jar"]
+FROM openjdk:17
+COPY build/risk-profile-api.jar risk-profile-api.jar
+EXPOSE 8080
+ENTRYPOINT ["java","-jar","/risk-profile-api.jar"]

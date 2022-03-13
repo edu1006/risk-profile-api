@@ -23,13 +23,17 @@ public final class UserProfileValidator {
         if (userProfile.getAge() == null ||  userProfile.getAge() < 0) {
             throw new IllegalArgumentException("invalid age");
         }
+        if (userProfile.getVehicle() != null && userProfile.getVehicle().getYear() == null) {
+            throw new IllegalArgumentException("vehicle year can not be null");
+
+        }
 
         if (userProfile.getIncome() == null ||  userProfile.getIncome() < 0) {
             throw new IllegalArgumentException("Income should be bigger than 0");
         }
 
         //if not find, should thrwo EnumConstantNotPresentException
-        MaritalStatusEnum.valueOf(userProfile.getMaritalStatus());
+        MaritalStatusEnum.valueOf(userProfile.getMaritalStatus().toUpperCase());
 
     }
 }

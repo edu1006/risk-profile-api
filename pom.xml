@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.useorigin</groupId>
 	<artifactId>risk-profile</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>risk-profile</name>
 	<description>Risk profile is a artifact responsible for calculate risk user profile. </description>
 	<properties>
@@ -46,10 +46,9 @@
 		</dependency>
 
 	</dependencies>
+		<build>
+        <finalName>risk-profile-api</finalName>
 
-	<build>
-
-	
 		<plugins>
 			
 			<plugin>
@@ -122,6 +121,26 @@
 					</excludes>
 				</configuration>
 			</plugin>
+
+			<plugin>
+                <groupId>com.coderplus.maven.plugins</groupId>
+                <artifactId>copy-rename-maven-plugin</artifactId>
+                <version>1.0</version>
+                <executions>
+                    <execution>
+                        <id>copy-file</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>copy</goal>
+                        </goals>
+                        <configuration>
+
+							<sourceFile>target/risk-profile-api.jar</sourceFile>
+							<destinationFile>build/risk-profile-api.jar</destinationFile>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
 		</plugins>
 	</build>
 
