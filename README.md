@@ -5,15 +5,15 @@
 
 This project is a single container using:
 
-Java 17 
-MAVEN 3.8.4
-Spring boot 2.6.4 
+Java 17 </br>
+MAVEN 3.8.4</br>
+Spring boot 2.6.4 </br>
 
 
 The structure of the project is divide in package by feature strategy: 
 
-riskengine feature
-userprofile feature
+ºriskengine feature</br>
+ºuserprofile feature
 
 I decide to choose it thinking in future split in new microservices. 
 It can be easier to apply strangler pattern when we are using package by feature layers. 
@@ -22,7 +22,7 @@ It can be easier to apply strangler pattern when we are using package by feature
 
 To build the project use: 
 
-mvn clean install
+mvn clean install</br>
 
 ### test
 
