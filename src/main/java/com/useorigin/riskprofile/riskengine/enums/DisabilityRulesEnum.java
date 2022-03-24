@@ -8,7 +8,8 @@ public enum DisabilityRulesEnum {
     AGE_VALIDATION_RULE(new AgeValidationRule()),
     INCOME__RULES_ENUM(new IncomeAboveTargetValueRule()),
     MARRIED_RULE(new MarriedDisabilityRule()),
-    DEPENDS_RULE(new UserDependentsRule());
+    DEPENDS_RULE(new UserDependentsRule()),
+    VALIDATION_ON_RISK_QUESTION_TARGET(new SecondAnwerOnRiskQuestionRule());
 
     private Rule rule;
 

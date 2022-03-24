@@ -8,6 +8,8 @@ public class DisabilityInsurance implements  Insurance{
     public DisabilityInsurance(UserProfileRequest userProfile){
         this.userProfile = userProfile;
     }
+
+
     @Override
     public Boolean hasInsuranceVariableToBeCalculated() {
 
