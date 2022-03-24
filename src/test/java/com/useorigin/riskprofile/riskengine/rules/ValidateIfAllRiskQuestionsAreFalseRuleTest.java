@@ -39,7 +39,7 @@ public class ValidateIfAllRiskQuestionsAreFalseRuleTest {
     }
 
 
-    @Test
+    @Test(expected = IneligibleExepection.class)
     public void shouldGetDefaultAnswerWithIncomeAboveTargetValue() throws IneligibleExepection {
         Rule r = new ValidateIfAllRiskQuestionsAreFalseRule();
 

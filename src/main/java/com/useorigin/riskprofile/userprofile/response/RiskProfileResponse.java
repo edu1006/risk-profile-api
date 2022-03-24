@@ -14,4 +14,5 @@ public class RiskProfileResponse {
     private String disability;
     private String home;
     private String life;
+    private String umbrella;
 }
