@@ -110,4 +110,24 @@ public class DisabilityRulesServiceTests {
     }
 
 
+
+
+    @Test
+    public void shouldTestNewRuleAddingPointsOnDisability(){
+
+        UserProfileRequest userProfile = new UserProfileRequest();
+
+        userProfile.setAge(58);
+        userProfile.setIncome(200000.00);
+        userProfile.setMaritalStatus("married");
+        userProfile.setDependents(0);
+        userProfile.setHouse(new House());
+        userProfile.getHouse().setOwnership_status("owned");
+        Integer[] arrQuestions = {0,1,0};
+        userProfile.setRiskQuestions(arrQuestions );
+
+        InsurancePlanEnum plan = service.calculateInsurancePlan(userProfile);
+        assertThat(plan).isEqualTo(InsurancePlanEnum.REGULAR);
+    }
+
 }

@@ -9,7 +9,8 @@ import lombok.Setter;
 @Data
 
 @NoArgsConstructor
-public class UserProfileRequest{
+public class
+UserProfileRequest{
 
 
     private Integer age;
