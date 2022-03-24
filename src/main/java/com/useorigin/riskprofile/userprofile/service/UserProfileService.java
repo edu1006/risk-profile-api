@@ -17,12 +17,14 @@ public class UserProfileService {
 
     private DisabilityRulesService disabilityRulesService;
 
+    private UmbrellaRulesService umbrellaRulesService;
 
-    public UserProfileService(AutoRulesService autoRulesService, HouseRulesService houseRulesService, LifeRulesService lifeRulesService, DisabilityRulesService disabilityRulesService){
+    public UserProfileService(AutoRulesService autoRulesService, HouseRulesService houseRulesService, LifeRulesService lifeRulesService, DisabilityRulesService disabilityRulesService, UmbrellaRulesService umbrellaRulesService){
         this.autoRulesService = autoRulesService;
         this.houseRulesService = houseRulesService;
         this.lifeRulesService = lifeRulesService;
         this.disabilityRulesService = disabilityRulesService;
+        this.umbrellaRulesService = umbrellaRulesService;
     }
 
     public RiskProfileResponse getUserRiskProfile(UserProfileRequest request) {
@@ -32,8 +34,8 @@ public class UserProfileService {
         riskProfile.setDisability(this.disabilityRulesService.calculateInsurancePlan(request).toString());
         riskProfile.setLife(this.lifeRulesService.calculateInsurancePlan(request).toString());
         riskProfile.setHome(this.houseRulesService.calculateInsurancePlan(request).toString());
+        riskProfile.setUmbrella(this.umbrellaRulesService.calculateInsurancePlan(request, riskProfile).toString());
         return riskProfile;
     }
-
 
 }

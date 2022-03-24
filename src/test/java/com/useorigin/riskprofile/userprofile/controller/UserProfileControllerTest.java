@@ -40,7 +40,7 @@ public class UserProfileControllerTest {
         request.setIncome(15000.00);
         request.setMaritalStatus("single");
         request.setDependents(0);
-        Integer[] arr = {0, 0, 0};
+        Integer[] arr = {1, 0, 0};
         request.setRiskQuestions(arr);
         HttpEntity<?> rquestEntity = new HttpEntity<>(request);
 
