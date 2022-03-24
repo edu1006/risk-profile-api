@@ -76,4 +76,20 @@ public class AutoRulesServiceTest {
 
     }
 
+
+    @Test
+    public void shouldGetIneligleWithIncomeAboveTArget()  {
+        UserProfileRequest user =  new UserProfileRequest();
+        user.setVehicle(new Vehicle());
+        user.getVehicle().setYear(2015);
+        user.setAge(25);
+        user.setIncome(24000.00);
+        Integer[] arrQuestions = {0,0,0};
+        user.setRiskQuestions(arrQuestions );
+
+        InsurancePlanEnum value = service.calculateInsurancePlan(user);
+        assertThat(value).isEqualTo(InsurancePlanEnum.INELIGIBLE);
+
+    }
+
 }
