@@ -19,6 +19,7 @@ public abstract class InsuranceRulesService {
         } catch (IneligibleExepection e) {
             return InsurancePlanEnum.INELIGIBLE;
         }
+
     }
 
     protected abstract int getRateFromProfile() throws IneligibleExepection;

@@ -18,6 +18,7 @@ import com.useorigin.riskprofile.riskengine.rules.*;
 
 public enum AutoRulesEnum {
    INELIGIBLE_RULE(new IneligibleRule()),
+   VALIDATION_RISK_QUESTION_RULE(new ValidateIfAllRiskQuestionsAreFalseRule()),
    AGE_VALIDATION_RULE(new AgeValidationRule()),
    INCOME_ABOVE_TARGET_VALUE_RULE(new IncomeAboveTargetValueRule()),
    VEHICLE_YEAR_VALIDATION_RULE(new VehicleAgeRule());

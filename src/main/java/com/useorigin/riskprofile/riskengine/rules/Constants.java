@@ -10,6 +10,8 @@ public class Constants {
     public static final int MARRIED_DISABILITY_RULE_POINT = -1;
     public static final int HOUSE_MORTGAGED_RULE_POINTS = 1;
     public static final int POSITION_TO_BE_VALIDATE = 1;
+    public static final int TRUE_VALUE_AS_INT = 1;
+    public static final Double INCOME_TO_BE_VALIDATE_PLUS_VALIDATION_OF_ALL_RISK_QUESTIONS = 25000.00;
 
     static final int AGE_VEHICLE_VALIDATION = 5;
     static final Integer MIN_AGE_TO_DEDUCT_1_POINTS = 30;

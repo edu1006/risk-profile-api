@@ -4,6 +4,7 @@ import com.useorigin.riskprofile.riskengine.rules.*;
 
 public enum LifeRulesEnum {
 
+   VALIDATION_RISK_QUESTION_RULE(new ValidateIfAllRiskQuestionsAreFalseRule()),
    AGE_VALIDATION_ABOVE_TARGET_VALUE(new AgeValidationAboveTargetValueRule()),
    AGE_VALIDATION_RULE(new AgeValidationRule()),
    INCOME_ABOVE_TARGET_VALUE_RULE(new IncomeAboveTargetValueRule()),
